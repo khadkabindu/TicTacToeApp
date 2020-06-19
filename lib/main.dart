@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe/pick_choice.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,23 +42,39 @@ class _MyHomePageState extends State<MyHomePage> {
             Image.asset('images/XO.png',width: 300,),
              Column(children: <Widget>[
                ButtonTheme(
-                 minWidth: 200.0,
+                 minWidth: 250.0,
                  child: RaisedButton(
-                   onPressed: (){},
+                   onPressed: (){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => PickChoice()),
+                     );
+                   },
                    color: Colors.white,
                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
-                   child: Text('Single Player',style: TextStyle(fontWeight: FontWeight.bold),),
+                   child: Text('SINGLE PLAYER',style: TextStyle(fontWeight: FontWeight.bold),),
                  ),
                ),
+               SizedBox(height: 20.0,),
                ButtonTheme(
-                 minWidth: 200.0,
+                 minWidth: 250.0,
                  child: RaisedButton(
-                   onPressed: (){},
+                   onPressed: (){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => PickChoice()),
+                     );
+                   },
                    color: Colors.white,
                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0,),),
-                   child: Text('With Friend',style: TextStyle(fontWeight: FontWeight.bold),),
+                   child: Text('WITH A FRIEND',style: TextStyle(fontWeight: FontWeight.bold),),
                  ),
                ),
+               SizedBox(height: 40.0,),
+               FloatingActionButton(
+                 backgroundColor: Colors.white,
+                 onPressed: (){},
+               child: Icon(Icons.settings,color: Colors.black,),)
              ],),
           ],
         ),
